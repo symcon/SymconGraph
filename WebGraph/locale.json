@@ -1,0 +1,25 @@
+{
+	"translations": {
+		"de": {
+			"Please specify username/password which is required to load the graphs": "Bitte geben Sie einen Benutzernamen/Kennwort an, welches beim Öffnen abgefragt wird",
+			"Username": "Benutzername",
+			"Password": "Passwort",
+			"VariableID": "VariablenID",
+			"Date/Time": "Datum/Uhrzeit",
+			"Time span": "Zeitspanne",
+			"Hour": "Stunde",
+			"Day": "Tag",
+			"Week": "Woche",
+			"Month": "Month",
+			"Year": "Jahr",
+			"Decade": "Dekade",
+			"HighDensity": "Hohe Dichte",
+			"Extrema": "Extremwerte",
+			"Width": "Breite",
+			"Height": "Höhe",
+			"Open (localhost only!)": "Öffnen (Nur Lokal!)",
+			"DynamicScaling": "Dynamische Skalierung",
+			"Start time": "Startzeit"
+		}
+	}
+}

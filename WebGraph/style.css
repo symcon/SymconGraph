@@ -1,0 +1,121 @@
+/* Copy&Paste from WebFront Source (web/css/chart.css) */
+/* Last Update: 03.08.2017 (c0cd199a912e0d31bef0e168944fe9fc9fc9342c) */
+div.ipsChart > svg {
+    font-family: Arial; }
+
+/* Grid Layout */
+div.ipsChart > svg > g.grid > line.gridLine {
+    stroke-width: 1px;
+    stroke: lightgrey;
+    stroke-opacity: 0.2;
+    stroke-dasharray: 5,5; }
+
+div.ipsChart > svg > g.grid > line.gridLine.firstLine {
+    stroke-opacity: initial;
+    stroke-dasharray: initial; }
+
+/* Outline for bool/bar/line graphs */
+div.ipsChart > svg > g.graphs > g.outline > g > path {
+    stroke: white;
+    fill: none; }
+
+div.ipsChart > svg.line > g.graphs > g.outline > g > path {
+    stroke-width: 3px; }
+
+div.ipsChart > svg.bar > g.graphs > g.outline > g > path {
+    stroke-width: 2px; }
+
+div.ipsChart > svg.bool > g.graphs > g.outline > g > path {
+    stroke-width: 1px; }
+
+/* Background for bool/bar/line graphs */
+div.ipsChart > svg > g.graphs > g.background > g > path {
+    stroke: none;
+    fill: white;
+    opacity: 0.2; }
+
+/* Points for non HD line graphs */
+div.ipsChart > svg.line > g.graphs > g.point > g > circle {
+    r: 4px;
+    fill: white;
+    stroke: black;
+    stroke-width: 2px }
+
+/* Labels for X/Y axis */
+div.ipsChart > svg > g.axis.x > g.labels > text {
+    text-anchor: middle; }
+
+div.ipsChart > svg > g.axis.y > g.labels.left > text {
+    text-anchor: end; }
+
+div.ipsChart > svg > g.axis.y > g.labels.rigth > text {
+    text-anchor: start; }
+
+div.ipsChart > svg > g.axis > g.labels > text {
+    fill: white;
+    font-size: 12px; }
+
+/* Override for HD graphs */
+div.ipsChart > svg.line > g.graphs > g.outline > g > path {
+    stroke-width: 2px }
+
+/* Override for MIN graphs */
+div.ipsChart > svg.line > g.graphs > g.point > g.min > circle {
+    display: none; }
+
+div.ipsChart > svg.line > g.graphs > g.outline > g.min > path,
+div.ipsChart > svg.bar > g.graphs > g.outline > g.min > path {
+    stroke: #157CD6; }
+
+div.ipsChart > svg.line > g.graphs > g.background > g.min > path {
+    fill: none; }
+
+div.ipsChart > svg.bar > g.graphs > g.background > g.min > path {
+    fill: #157CD6;
+    opacity: 0.5; }
+
+/* Override for MAX graphs */
+div.ipsChart > svg.line > g.graphs > g.point > g.max > circle {
+    display: none; }
+
+div.ipsChart > svg.line > g.graphs > g.outline > g.max > path,
+div.ipsChart > svg.bar > g.graphs > g.outline > g.max > path {
+    stroke: #D11111; }
+
+div.ipsChart > svg.line > g.graphs > g.background > g.max > path {
+    fill: #D11111;
+    opacity: 0.5; }
+
+div.ipsChart > svg.bar > g.graphs > g.background > g.max > path {
+    fill: #D11111;
+    opacity: 0.5; }
+
+/* Override for AVG graphs, which should fill with MIN color */
+div.ipsChart > svg.line > g.graphs > g.background > g.avg > path {
+    fill: #157CD6;
+    opacity: 0.5; }
+
+/* Bounding box for single Bool graphs */
+div.ipsChart > svg.bool > g.graphs > g.background > g > rect {
+    opacity: 0; }
+
+/* Bounding box for multi Bool graphs */
+div.ipsChart > svg.multi.bool > g.graphs > g.background > g > rect {
+    fill: white;
+    opacity: 0.1;
+    stroke: white; }
+
+/* Bounding box for Bool graph labels */
+div.ipsChart > svg.bool > g.graphs > g.labels > g > rect {
+    opacity: 0.5; }
+
+/* Remove upper grid line for Bool */
+div.ipsChart > svg.bool > g.grid > line.gridLine.x {
+    display: none; }
+div.ipsChart > svg.bool > g.grid > line.gridLine.x.firstLine {
+    display: block; }
+
+/* Text rect for Bool graph labels */
+div.ipsChart > svg.bool > g.graphs > g.labels > g > text {
+    font-size: 12px;
+    fill: white; }

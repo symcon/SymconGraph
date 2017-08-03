@@ -1,0 +1,40 @@
+{
+	"elements":
+	[
+		{ "type": "Label", "label": "Please specify username/password which is required to load the graphs" },
+		{ "name": "Username", "type": "ValidationTextBox", "caption": "Username" },
+		{ "name": "Password", "type": "PasswordTextBox", "caption": "Password" }
+	],
+	"actions":
+	[
+		{ "type": "SelectVariable", "name": "VariableID", "caption": "VariableID" },
+		{ "type": "ValidationTextBox", "name": "StartTime", "caption": "Date/Time" },
+		{ "type": "Select", "name": "TimeSpan",	"caption": "Time span",
+			"options": [{
+				"label": "Hour",
+				"value": 0
+			}, {
+				"label": "Day",
+				"value": 1
+			}, {
+				"label": "Week",
+				"value": 2
+			}, {
+				"label": "Month",
+				"value": 3
+			}, {
+				"label": "Year",
+				"value": 4
+			}, {
+				"label": "Decade",
+				"value": 5
+			}]
+		},
+		{ "type": "CheckBox", "name": "IsHighDensity", "caption": "HighDensity" },
+		{ "type": "CheckBox", "name": "IsExtrema", "caption": "Extrema" },
+		{ "type": "CheckBox", "name": "IsDynamic", "caption": "DynamicScaling" },
+		{ "type": "NumberSpinner", "name": "Width", "caption": "Width" },
+		{ "type": "NumberSpinner", "name": "Height", "caption": "Height" },
+		{ "type": "Button", "label": "Open (localhost only!)", "onClick": "echo \"http://127.0.0.1:3777/hook/webgraph/?id=$VariableID&startTime=$StartTime&timeSpan=$TimeSpan&isHighDensity=$IsHighDensity&isExtrema=$IsExtrema&isDyn=$IsDynamic&width=$Width&height=$Height\"" }
+	]
+}
