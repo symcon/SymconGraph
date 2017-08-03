@@ -4,7 +4,7 @@
 			"Please specify username/password which is required to load the graphs": "Bitte geben Sie einen Benutzernamen/Kennwort an, welches beim Öffnen abgefragt wird",
 			"Username": "Benutzername",
 			"Password": "Passwort",
-			"VariableID": "VariablenID",
+			"ObjectID": "ObjektID",
 			"Date/Time": "Datum/Uhrzeit",
 			"Time span": "Zeitspanne",
 			"Hour": "Stunde",

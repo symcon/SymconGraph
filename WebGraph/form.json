@@ -7,7 +7,7 @@
 	],
 	"actions":
 	[
-		{ "type": "SelectVariable", "name": "VariableID", "caption": "VariableID" },
+		{ "type": "SelectObject", "name": "ObjectID", "caption": "ObjectID" },
 		{ "type": "ValidationTextBox", "name": "StartTime", "caption": "Date/Time" },
 		{ "type": "Select", "name": "TimeSpan",	"caption": "Time span",
 			"options": [{
@@ -35,6 +35,6 @@
 		{ "type": "CheckBox", "name": "IsDynamic", "caption": "DynamicScaling" },
 		{ "type": "NumberSpinner", "name": "Width", "caption": "Width" },
 		{ "type": "NumberSpinner", "name": "Height", "caption": "Height" },
-		{ "type": "Button", "label": "Open (localhost only!)", "onClick": "echo \"http://127.0.0.1:3777/hook/webgraph/?id=$VariableID&startTime=$StartTime&timeSpan=$TimeSpan&isHighDensity=$IsHighDensity&isExtrema=$IsExtrema&isDyn=$IsDynamic&width=$Width&height=$Height\"" }
+		{ "type": "Button", "label": "Open (localhost only!)", "onClick": "echo \"http://127.0.0.1:3777/hook/webgraph/?id=$ObjectID&startTime=$StartTime&timeSpan=$TimeSpan&isHighDensity=$IsHighDensity&isExtrema=$IsExtrema&isDyn=$IsDynamic&width=$Width&height=$Height\"" }
 	]
 }

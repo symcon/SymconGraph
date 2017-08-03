@@ -67,8 +67,8 @@
 			}
 
 			$id = intval($_GET['id']);
-			if(!IPS_VariableExists($id)) {
-				echo "Invalid VariableID";
+			if(!IPS_VariableExists($id) && !IPS_MediaExists($id)) {
+				echo "Invalid VariableID/MediaID";
 				return;
 			}
 
