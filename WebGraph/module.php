@@ -66,15 +66,13 @@
 				die("Missing parameter: id");
 			}
 
-			$id = $_GET['id'];
-
+			$id = intval($_GET['id']);
 			if(!IPS_VariableExists($id)) {
 				echo "Invalid VariableID";
 				return;
 			}
 
 			$startTime = time();
-
             if(isset($_GET['startTime']) && $_GET['startTime'] != "") {
                 $startTime = strtotime($_GET['startTime']);
             }
