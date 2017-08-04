@@ -62,6 +62,7 @@
 		{ "type": "CheckBox", "name": "IsDynamic", "caption": "DynamicScaling" },
 		{ "type": "NumberSpinner", "name": "Width", "caption": "Width" },
 		{ "type": "NumberSpinner", "name": "Height", "caption": "Height" },
-		{ "type": "Button", "label": "Open (localhost only!)", "onClick": "echo \"http://127.0.0.1:3777/hook/webgraph/?id=$ObjectID&startTime=$StartTime&timeSpan=$TimeSpan&isHighDensity=$IsHighDensity&isExtrema=$IsExtrema&isDyn=$IsDynamic&width=$Width&height=$Height\"" }
+		{ "type": "Button", "label": "Open (Localhost)", "onClick": "echo \"http://127.0.0.1:3777/hook/webgraph/?id=$ObjectID&startTime=$StartTime&timeSpan=$TimeSpan&isHighDensity=$IsHighDensity&isExtrema=$IsExtrema&isDyn=$IsDynamic&width=$Width&height=$Height\"" },
+		{ "type": "Button", "label": "Open (Symcon Connect)", "onClick": "$url = CC_GetURL(IPS_GetInstanceListByModuleID('{9486D575-BE8C-4ED8-B5B5-20930E26DE6F}')[0]); if($url == '') die((new IPSModule($id))->Translate('Symcon Connect is not active!')); echo \"$url/hook/webgraph/?id=$ObjectID&startTime=$StartTime&timeSpan=$TimeSpan&isHighDensity=$IsHighDensity&isExtrema=$IsExtrema&isDyn=$IsDynamic&width=$Width&height=$Height\"" }
 	]
 }

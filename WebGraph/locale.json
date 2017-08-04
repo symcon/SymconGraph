@@ -18,7 +18,8 @@
 			"Extrema": "Extremwerte",
 			"Width": "Breite",
 			"Height": "Höhe",
-			"Open (localhost only!)": "Öffnen (Nur Lokal!)",
+			"Open (Localhost)": "Öffnen (Lokal)",
+			"Open (Symcon Connect)": "Öffnen (Symcon Connect)",
 			"DynamicScaling": "Dynamische Skalierung",
 			"Start time": "Startzeit",
 			"Sun": "So.",
@@ -39,7 +40,8 @@
 			"Sep": "Sep.",
 			"Oct": "Okt.",
 			"Nov": "Nov.",
-			"Dec": "Dez."
+			"Dec": "Dez.",
+			"Symcon Connect is not active!": "Symcon Connect ist nicht aktiv"
 		}
 	}
 }
