@@ -8,6 +8,9 @@
 			
 			$this->RegisterPropertyString("Username", "");
 			$this->RegisterPropertyString("Password", "");
+
+			$this->RegisterPropertyString("AccessList", "[]");
+
 		}
 	
 		public function ApplyChanges() {
@@ -16,7 +19,7 @@
 			
 			$this->RegisterHook("/hook/webgraph");
 		}
-		
+
 		private function TranslateChart($chart) {
 
 			$weekdays = Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
@@ -30,6 +33,21 @@
 			return $chart;
 
 		}
+
+		private function IsAllowedObject($id) {
+
+			$allowed = json_decode($this->ReadPropertyString("AccessList"));
+
+			foreach($allowed as $item) {
+				if($item->ObjectID == $id) {
+					return true;
+				}
+			}
+
+			return false;
+
+		}
+
 		private function RegisterHook($WebHook) {
 			$ids = IPS_GetInstanceListByModuleID("{015A6EB8-D6E5-4B93-B496-0D3F77AE9FE1}");
 			if(sizeof($ids) > 0) {
@@ -50,7 +68,27 @@
 				IPS_ApplyChanges($ids[0]);
 			}
 		}
-	
+
+        public function GetConfigurationForm() {
+
+            $formdata = json_decode(file_get_contents(__DIR__ . "/form.json"));
+
+            $allowed = json_decode($this->ReadPropertyString("AccessList"));
+
+            $options = Array();
+            $values = Array();
+            foreach ($allowed as $item) {
+                $options[] = Array("label" => IPS_GetName($item->ObjectID), "value" => $item->ObjectID);
+                $values[] = Array("Name" => IPS_GetName($item->ObjectID));
+            }
+
+            $formdata->elements[4]->values = $values;
+            $formdata->actions[0]->options = $options;
+
+            return json_encode($formdata);
+
+        }
+
 		/**
 		* This function will be called by the hook control. Visibility should be protected!
 		*/
@@ -80,10 +118,16 @@
 			}
 
 			$id = intval($_GET['id']);
-			if(!IPS_VariableExists($id) && !IPS_MediaExists($id)) {
-				echo "Invalid VariableID/MediaID";
-				return;
+
+			if(!$this->IsAllowedObject($id)) {
+                echo "This id is not allowed";
+                return;
 			}
+
+            if(!IPS_VariableExists($id) && !IPS_MediaExists($id)) {
+                echo "Invalid VariableID/MediaID";
+                return;
+            }
 
 			$startTime = time();
             if(isset($_GET['startTime']) && $_GET['startTime'] != "") {

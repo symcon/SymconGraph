@@ -3,11 +3,38 @@
 	[
 		{ "type": "Label", "label": "Please specify username/password which is required to load the graphs" },
 		{ "name": "Username", "type": "ValidationTextBox", "caption": "Username" },
-		{ "name": "Password", "type": "PasswordTextBox", "caption": "Password" }
+		{ "name": "Password", "type": "PasswordTextBox", "caption": "Password" },
+		{ "type": "Label", "label": "Please add all allowed object ids" },
+		{
+			"type": "List",
+			"name": "AccessList",
+			"caption": "Access List",
+			"rowCount": 5,
+			"add": true,
+			"delete": true,
+			"sort": {
+				"column": "name",
+				"direction": "ascending"
+			},
+			"columns": [{
+				"label": "ObjectID",
+				"name": "ObjectID",
+				"width": "100px",
+				"add": 0,
+				"edit": {
+					"type": "SelectObject"
+				}
+			}, {
+				"label": "Name",
+				"name": "Name",
+				"width": "auto",
+				"add": ""
+			}]
+		}
 	],
 	"actions":
 	[
-		{ "type": "SelectObject", "name": "ObjectID", "caption": "ObjectID" },
+		{ "type": "Select", "name": "ObjectID",	"caption": "ObjectID", "options": [] },
 		{ "type": "ValidationTextBox", "name": "StartTime", "caption": "Date/Time" },
 		{ "type": "Select", "name": "TimeSpan",	"caption": "Time span",
 			"options": [{
