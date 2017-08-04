@@ -48,6 +48,25 @@
 
 		}
 
+		private function BuildCSSForMultiChart($mediaID) {
+
+			$content = json_decode(base64_decode(IPS_GetMediaContent($mediaID)));
+
+			$css = "/* Additional CSS for multi chart colorizing */" . PHP_EOL;
+			$i = 1;
+			foreach($content->datasets as $dataset) {
+				if($dataset->fillColor == "clear") {
+                    $dataset->fillColor = "transparent";
+				}
+                $css .= 'div.ipsChart > svg > g.graphs > g.background > g:nth-of-type(' . $i . ') path {' . PHP_EOL . '    fill: ' . $dataset->fillColor . ';' . PHP_EOL . '    opacity: 0.5; }' . PHP_EOL;
+                $css .= 'div.ipsChart > svg > g.graphs > g.outline > g:nth-of-type(' . $i . ') path {' . PHP_EOL . '    stroke: ' . $dataset->strokeColor . '; }' . PHP_EOL;
+				$i++;
+			}
+
+			return $css;
+
+		}
+
 		private function RegisterHook($WebHook) {
 			$ids = IPS_GetInstanceListByModuleID("{015A6EB8-D6E5-4B93-B496-0D3F77AE9FE1}");
 			if(sizeof($ids) > 0) {
@@ -199,6 +218,12 @@
 			}
 
 			$css = file_get_contents(__DIR__ . "/style.css");
+
+            if(IPS_MediaExists($id)) {
+                $css .= PHP_EOL . PHP_EOL;
+                $css .= $this->BuildCSSForMultiChart($id);
+		    }
+
 			$acID = IPS_GetInstanceListByModuleID("{43192F0B-135B-4CE7-A0A7-1475603F3060}")[0];
 			$chart = AC_RenderChart($acID, $id, $startTime, $timeSpan, $isHighDensity, $isExtrema, $isDynamic, $width, $height);
 
