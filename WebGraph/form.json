@@ -1,7 +1,7 @@
 {
 	"elements":
 	[
-		{ "type": "Label", "label": "Please add all allowed object ids" },
+		{ "type": "Label", "label": "Please add all allowed object IDs" },
 		{
 			"type": "List",
 			"name": "AccessList",

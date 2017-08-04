@@ -82,7 +82,7 @@
                 $values[] = Array("Name" => IPS_GetName($item->ObjectID));
             }
 
-            $formdata->elements[4]->values = $values;
+            $formdata->elements[1]->values = $values;
             $formdata->actions[0]->options = $options;
 
             return json_encode($formdata);
