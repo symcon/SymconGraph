@@ -1,9 +1,6 @@
 {
 	"elements":
 	[
-		{ "type": "Label", "label": "Please specify username/password which is required to load the graphs" },
-		{ "name": "Username", "type": "ValidationTextBox", "caption": "Username" },
-		{ "name": "Password", "type": "PasswordTextBox", "caption": "Password" },
 		{ "type": "Label", "label": "Please add all allowed object ids" },
 		{
 			"type": "List",
@@ -30,7 +27,10 @@
 				"width": "auto",
 				"add": ""
 			}]
-		}
+		},
+		{ "type": "Label", "label": "Expert only: Require username/password to load the graphs" },
+		{ "name": "Username", "type": "ValidationTextBox", "caption": "Username" },
+		{ "name": "Password", "type": "PasswordTextBox", "caption": "Password" }
 	],
 	"actions":
 	[
