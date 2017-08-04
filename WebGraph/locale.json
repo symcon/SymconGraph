@@ -19,7 +19,26 @@
 			"Height": "Höhe",
 			"Open (localhost only!)": "Öffnen (Nur Lokal!)",
 			"DynamicScaling": "Dynamische Skalierung",
-			"Start time": "Startzeit"
+			"Start time": "Startzeit",
+			"Sun": "So.",
+			"Mon": "Mo.",
+			"Tue": "Di.",
+			"Wed": "Mi.",
+			"Thu": "Do.",
+			"Fri": "Fr.",
+			"Sat": "Sa.",
+			"Jan": "Jan.",
+			"Feb": "Feb.",
+			"Mar": "März",
+			"Apr": "Apr.",
+			"May": "Mai",
+			"Jun": "Juni",
+			"Jul": "Juli",
+			"Aug": "Aug.",
+			"Sep": "Sep.",
+			"Oct": "Okt.",
+			"Nov": "Nov.",
+			"Dec": "Dez."
 		}
 	}
 }

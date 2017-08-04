@@ -17,6 +17,19 @@
 			$this->RegisterHook("/hook/webgraph");
 		}
 		
+		private function TranslateChart($chart) {
+
+			$weekdays = Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+			$months = Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+
+			$merged = array_merge($weekdays, $months);
+			foreach ($merged as $str) {
+                $chart = str_replace($str, $this->Translate($str), $chart);
+            }
+
+			return $chart;
+
+		}
 		private function RegisterHook($WebHook) {
 			$ids = IPS_GetInstanceListByModuleID("{015A6EB8-D6E5-4B93-B496-0D3F77AE9FE1}");
 			if(sizeof($ids) > 0) {
@@ -144,6 +157,9 @@
 			$css = file_get_contents(__DIR__ . "/style.css");
 			$acID = IPS_GetInstanceListByModuleID("{43192F0B-135B-4CE7-A0A7-1475603F3060}")[0];
 			$chart = AC_RenderChart($acID, $id, $startTime, $timeSpan, $isHighDensity, $isExtrema, $isDynamic, $width, $height);
+
+			//Translate strings
+			$chart = $this->TranslateChart($chart);
 
 			//Bail out on error
 			if($chart === false) {
