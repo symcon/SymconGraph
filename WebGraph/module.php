@@ -67,6 +67,18 @@
 
 		}
 
+        private function BuildLegendForMultiChart($mediaID) {
+
+            $content = json_decode(base64_decode(IPS_GetMediaContent($mediaID)));
+
+            $legend = '<div style="float: clear"></div><div style="float: left; margin-right: 10px">Name: </div>';
+            foreach($content->datasets as $dataset) {
+                $legend .= '<div style="width: 16px; height: 16px; background: ' . $dataset->fillColor . '; border: 1px solid ' . $dataset->strokeColor . '; float: left; margin-right: 5px;"></div><div style="float: left; margin-right: 10px">' . IPS_GetName($dataset->variableID) . '</div>' . PHP_EOL;
+            }
+            return $legend;
+
+        }
+
 		private function RegisterHook($WebHook) {
 			$ids = IPS_GetInstanceListByModuleID("{015A6EB8-D6E5-4B93-B496-0D3F77AE9FE1}");
 			if(sizeof($ids) > 0) {
@@ -222,7 +234,10 @@
             if(IPS_MediaExists($id)) {
                 $css .= PHP_EOL . PHP_EOL;
                 $css .= $this->BuildCSSForMultiChart($id);
-		    }
+                $legend = $this->BuildLegendForMultiChart($id);
+		    } else {
+                $legend = "Name: " . IPS_GetName($id);
+			}
 
 			$acID = IPS_GetInstanceListByModuleID("{43192F0B-135B-4CE7-A0A7-1475603F3060}")[0];
 			$chart = AC_RenderChart($acID, $id, $startTime, $timeSpan, $isHighDensity, $isExtrema, $isDynamic, $width, $height);
@@ -243,6 +258,8 @@
 <body>
 <div class="ipsChart">
 $title
+<br/>
+$legend
 <br/>
 $chart
 </div>
