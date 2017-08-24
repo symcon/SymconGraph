@@ -204,6 +204,16 @@
                 $height = intval($_GET['height']);
             }
 
+            $showTitle = true;
+            if(isset($_GET['showTitle'])) {
+                $showTitle = intval($_GET['showTitle']);
+            }
+
+            $showLegend = true;
+            if(isset($_GET['showLegend'])) {
+                $showLegend = intval($_GET['showLegend']);
+            }
+
             //Fixup startTime
 			switch($timeSpan) {
 				case 0: //Hour
@@ -231,13 +241,16 @@
 
 			$css = file_get_contents(__DIR__ . "/style.css");
 
-            if(IPS_MediaExists($id)) {
-                $css .= PHP_EOL . PHP_EOL;
-                $css .= $this->BuildCSSForMultiChart($id);
-                $legend = $this->BuildLegendForMultiChart($id);
-		    } else {
-                $legend = "Name: " . IPS_GetName($id);
-			}
+            $legend = "";
+            if($showLegend) {
+                if (IPS_MediaExists($id)) {
+                    $css .= PHP_EOL . PHP_EOL;
+                    $css .= $this->BuildCSSForMultiChart($id);
+                    $legend = $this->BuildLegendForMultiChart($id) . "<br/>";
+                } else {
+                    $legend = "Name: " . IPS_GetName($id) . "<br/>";
+                }
+            }
 
 			$acID = IPS_GetInstanceListByModuleID("{43192F0B-135B-4CE7-A0A7-1475603F3060}")[0];
 			$chart = AC_RenderChart($acID, $id, $startTime, $timeSpan, $isHighDensity, $isExtrema, $isDynamic, $width, $height);
@@ -250,7 +263,10 @@
 				return;
 			}
 
-			$title = $this->Translate("Start time") . ": " . date("d.m.Y H:i", $startTime);
+            $title = "";
+			if($showTitle) {
+                $title = $this->Translate("Start time") . ": " . date("d.m.Y H:i", $startTime) . "<br/>";
+			}
 
 			echo <<<EOT
 <html>
@@ -258,9 +274,7 @@
 <body>
 <div class="ipsChart">
 $title
-<br/>
 $legend
-<br/>
 $chart
 </div>
 </body>
