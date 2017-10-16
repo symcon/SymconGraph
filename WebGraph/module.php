@@ -241,11 +241,15 @@
 
 			$css = file_get_contents(__DIR__ . "/style.css");
 
+            //Add CSS for multi charts
+            if (IPS_MediaExists($id)) {
+                $css .= PHP_EOL . PHP_EOL;
+                $css .= $this->BuildCSSForMultiChart($id);
+            }
+
             $legend = "";
             if($showLegend) {
                 if (IPS_MediaExists($id)) {
-                    $css .= PHP_EOL . PHP_EOL;
-                    $css .= $this->BuildCSSForMultiChart($id);
                     $legend = $this->BuildLegendForMultiChart($id) . "<br/>";
                 } else {
                     $legend = "Name: " . IPS_GetName($id) . "<br/>";
