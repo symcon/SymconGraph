@@ -11,13 +11,30 @@
 
 			$this->RegisterPropertyString("AccessList", "[]");
 
+			// Inspired by module SymconTest/HookServe
+			// We need to call the RegisterHook function on Kernel READY
+			$this->RegisterMessage(0, IPS_KERNELMESSAGE);
+		}
+
+		// Inspired by module SymconTest/HookServe
+		public function MessageSink($TimeStamp, $SenderID, $Message, $Data)
+		{
+			parent::MessageSink($TimeStamp, $SenderID, $Message, $Data);
+
+			if ($Message == IPS_KERNELMESSAGE && $Data[0] == KR_READY) {
+				$this->RegisterHook('/hook/webgraph');
+			}
 		}
 	
 		public function ApplyChanges() {
 			//Never delete this line!
 			parent::ApplyChanges();
 			
-			$this->RegisterHook("/hook/webgraph");
+			// Inspired by module SymconTest/HookServe
+			// Only call this in READY state. On startup the WebHook instance might not be available yet
+			if (IPS_GetKernelRunlevel() == KR_READY) {
+				$this->RegisterHook("/hook/webgraph");
+			}
 		}
 
 		private function TranslateChart($chart) {
