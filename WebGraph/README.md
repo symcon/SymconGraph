@@ -28,8 +28,9 @@ Auch stilistische Konfigurationen sind über Parameter in der URL möglich.
 
 ### 3. Software-Installation
 
-Über das Modul-Control folgende URL hinzufügen.  
-`git://github.com/symcon/SymconGraph.git`  
+* Über den Modul Store das Modul Web Graph installieren.
+* Alternativ über das Modul Control folgende URL hinzufügen:
+´https://github.com/symcon/SymconGraph`  
 
 ### 4. Einrichten der Instanzen in IP-Symcon
 
