@@ -10,5 +10,6 @@
 	"parentRequirements": [],
 	"childRequirements": [],
 	"implemented": [],
-	"prefix": "WGR"
+	"prefix": "WGR",
+	"url": "https://github.com/symcon/SymconGraph/tree/master/WebGraph"
 }
