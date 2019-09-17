@@ -199,9 +199,12 @@ declare(strict_types=1);
                 $timeSpan = intval($_GET['timeSpan']);
             }
 
-            $isHighDensity = false;
-            if (isset($_GET['isHighDensity'])) {
-                $isHighDensity = intval($_GET['isHighDensity']);
+            if (isset($_GET['isRawDensity']) && intval($_GET['isRawDensity'])) {
+                $density = 2;
+            } else if (isset($_GET['isHighDensity']) && intval($_GET['isHighDensity'])) {
+                $density = 1;
+            } else {
+                $density = 0;
             }
 
             $isExtrema = false;
@@ -310,7 +313,7 @@ declare(strict_types=1);
             }
 
             $acID = IPS_GetInstanceListByModuleID('{43192F0B-135B-4CE7-A0A7-1475603F3060}')[0];
-            $chart = AC_RenderChart($acID, $id, $startTime, $timeSpan, $isHighDensity, $isExtrema, $isDynamic, $width, $height);
+            $chart = AC_RenderChart($acID, $id, $startTime, $timeSpan, $density, $isExtrema, $isDynamic, $width, $height);
 
             //Translate strings
             $chart = $this->TranslateChart($chart);
