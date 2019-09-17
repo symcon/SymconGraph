@@ -201,7 +201,7 @@ declare(strict_types=1);
 
             if (isset($_GET['isRawDensity']) && intval($_GET['isRawDensity'])) {
                 $density = 2;
-            } else if (isset($_GET['isHighDensity']) && intval($_GET['isHighDensity'])) {
+            } elseif (isset($_GET['isHighDensity']) && intval($_GET['isHighDensity'])) {
                 $density = 1;
             } else {
                 $density = 0;
