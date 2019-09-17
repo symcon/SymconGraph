@@ -243,22 +243,22 @@ declare(strict_types=1);
             if ($isContinuous) {
                 switch ($timeSpan) {
                     case 0: //Hour
-                        $startTime = mktime(date('H', $startTime) - 1, floor(date('i', $startTime) / 5) * 5 + 5, 0, date('m', $startTime), date('d', $startTime), date('Y', $startTime));
+                        $startTime = mktime(intval(date('H', $startTime)) - 1, floor(intval(date('i', $startTime)) / 5) * 5 + 5, 0, intval(date('m', $startTime)), intval(date('d', $startTime)), intval(date('Y', $startTime)));
                         break;
                     case 1: //Day
-                        $startTime = mktime(date('H', $startTime) + 1, 0, 0, date('m', $startTime), date('d', $startTime) - 1, date('Y', $startTime));
+                        $startTime = mktime(intval(date('H', $startTime)) + 1, 0, 0, intval(date('m', $startTime)), intval(date('d', $startTime)) - 1, intval(date('Y', $startTime)));
                         break;
                     case 2: //Week
-                        $startTime = mktime(0, 0, 0, date('m', $startTime), date('d', $startTime) - 7 + 1, date('Y', $startTime));
+                        $startTime = mktime(0, 0, 0, intval(date('m', $startTime)), intval(date('d', $startTime)) - 7 + 1, intval(date('Y', $startTime)));
                         break;
                     case 3: //Month
-                        $startTime = mktime(0, 0, 0, date('m', $startTime), date('d', $startTime) - date('t', $startTime) + 1, date('Y', $startTime));
+                        $startTime = mktime(0, 0, 0, intval(date('m', $startTime)), intval(date('d', $startTime)) - intval(date('t', $startTime)) + 1, intval(date('Y', $startTime)));
                         break;
                     case 4: //Year
-                        $startTime = mktime(0, 0, 0, date('m', $startTime) + 1, 1, date('Y', $startTime) - 1);
+                        $startTime = mktime(0, 0, 0, intval(date('m', $startTime)) + 1, 1, intval(date('Y', $startTime)) - 1);
                         break;
                     case 5: //Decade
-                        $startTime = mktime(0, 0, 0, 1, 1, date('Y', $startTime) - 9);
+                        $startTime = mktime(0, 0, 0, 1, 1, intval(date('Y', $startTime)) - 9);
                         break;
                     default:
                         echo 'Invalid timespan';
@@ -268,22 +268,22 @@ declare(strict_types=1);
             } else {
                 switch ($timeSpan) {
                     case 0: //Hour
-                        $startTime = mktime(date('H', $startTime), 0, 0, date('m', $startTime), date('d', $startTime), date('Y', $startTime));
+                        $startTime = mktime(intval(date('H', $startTime)), 0, 0, intval(date('m', $startTime)), intval(date('d', $startTime)), intval(date('Y', $startTime)));
                         break;
                     case 1: //Day
-                        $startTime = mktime(0, 0, 0, date('m', $startTime), date('d', $startTime), date('Y', $startTime));
+                        $startTime = mktime(0, 0, 0, intval(date('m', $startTime)), intval(date('d', $startTime)), intval(date('Y', $startTime)));
                         break;
                     case 2: //Week
-                        $startTime = mktime(0, 0, 0, date('m', $startTime), date('d', $startTime) - date('N', $startTime) + 1, date('Y', $startTime));
+                        $startTime = mktime(0, 0, 0, intval(date('m', $startTime)), intval(date('d', $startTime)) - intval(date('N', $startTime)) + 1, intval(date('Y', $startTime)));
                         break;
                     case 3: //Month
-                        $startTime = mktime(0, 0, 0, date('m', $startTime), 1, date('Y', $startTime));
+                        $startTime = mktime(0, 0, 0, intval(date('m', $startTime)), 1, intval(date('Y', $startTime)));
                         break;
                     case 4: //Year
-                        $startTime = mktime(0, 0, 0, 1, 1, date('Y', $startTime));
+                        $startTime = mktime(0, 0, 0, 1, 1, intval(date('Y', $startTime)));
                         break;
                     case 5: //Decade
-                        $startTime = mktime(0, 0, 0, 1, 1, floor(date('Y', $startTime) / 10) * 10);
+                        $startTime = mktime(0, 0, 0, 1, 1, floor(intval(date('Y', $startTime)) / 10) * 10);
                         break;
                     default:
                         echo 'Invalid timespan';
