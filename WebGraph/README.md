@@ -3,7 +3,7 @@ Das Modul dient dazu, bereits vorhandene Diagramme via WebHook zur Verfügung zu
 Der WebHook ist dann sowohl lokal als auch via Connect Service aufrufbar.
 Auch stilistische Konfigurationen sind über Parameter in der URL möglich.
 
-### Inhaltverzeichnis
+### Inhaltsverzeichnis
 
 1. [Funktionsumfang](#1-funktionsumfang)
 2. [Voraussetzungen](#2-voraussetzungen)
@@ -28,9 +28,9 @@ Auch stilistische Konfigurationen sind über Parameter in der URL möglich.
 
 ### 3. Software-Installation
 
-* Über den Modul Store das Modul Web Graph installieren.
-* Alternativ über das Modul Control folgende URL hinzufügen:
-´https://github.com/symcon/SymconGraph`  
+* Über den Module Store das Modul Web Graph installieren.
+* Alternativ über das Module Control folgende URL hinzufügen:
+`https://github.com/symcon/SymconGraph`  
 
 ### 4. Einrichten der Instanzen in IP-Symcon
 
@@ -63,7 +63,7 @@ Weitere Einstellungen können an die URL angehangen werden.
 ### 5. Statusvariablen und Profile
 
 Es werden keine zusätzlichen Statusvariablen oder Profile erstellt.
-Es wird lediglich der WebHook "/hook/webgraph/" eingetragen
+Es wird lediglich der WebHook "/hook/webgraph/" eingetragen.
 
 ### 6. WebFront
 
