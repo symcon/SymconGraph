@@ -66,7 +66,5 @@
 		{ "type": "NumberSpinner", "name": "Height", "caption": "Height" },
 		{ "type": "CheckBox", "name": "ShowTitle", "caption": "Show title" },
 		{ "type": "CheckBox", "name": "ShowLegend", "caption": "Show legend" },
-		{ "type": "Button", "label": "Open (Localhost)", "onClick": "echo \"http://127.0.0.1:3777/hook/webgraph/?id=$ObjectID&startTime=$StartTime&timeSpan=$TimeSpan&isHighDensity=$IsHighDensity&isRawDensity=$IsRawDensity&isExtrema=$IsExtrema&isDynamic=$IsDynamic&isContinuous=$IsContinuous&width=$Width&height=$Height&showTitle=$ShowTitle&showLegend=$ShowLegend\";" },
-		{ "type": "Button", "label": "Open (Symcon Connect)", "onClick": "$url = CC_GetURL(IPS_GetInstanceListByModuleID('{9486D575-BE8C-4ED8-B5B5-20930E26DE6F}')[0]); if($url == '') die((new IPSModule($id))->Translate('Symcon Connect is not active!')); echo \"$url/hook/webgraph/?id=$ObjectID&startTime=$StartTime&timeSpan=$TimeSpan&isHighDensity=$IsHighDensity&isRawDensity=$IsRawDensity&isExtrema=$IsExtrema&isDynamic=$IsDynamic&isContinuous=$IsContinuous&width=$Width&height=$Height&showTitle=$ShowTitle&showLegend=$ShowLegend\";" }
-	]
+		{ "type": "Button", "label": "Open in Browser", "link": true, "onClick": "echo \"/hook/webgraph/?id=$ObjectID&startTime=$StartTime&timeSpan=$TimeSpan&isHighDensity=$IsHighDensity&isRawDensity=$IsRawDensity&isExtrema=$IsExtrema&isDynamic=$IsDynamic&isContinuous=$IsContinuous&width=$Width&height=$Height&showTitle=$ShowTitle&showLegend=$ShowLegend\";" }	]
 }
