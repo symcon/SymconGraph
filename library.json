@@ -4,8 +4,7 @@
 	"name": "Graph Modules",
 	"url": "https://www.symcon.de/",
 	"compatibility": {
-		"version": "4.3",
-		"date": 1502181601
+		"version": "5.1"
 	},
 	"version": "1.0",
 	"build": 0,
