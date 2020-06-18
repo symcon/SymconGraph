@@ -34,7 +34,8 @@ Auch stilistische Konfigurationen sind über Parameter in der URL möglich.
 
 ### 4. Einrichten der Instanzen in IP-Symcon
 
-- Unter "Instanz hinzufügen" ist das 'Web Graph'-Modul unter dem Hersteller '(Kern)' aufgeführt.  
+- Unter "Instanz hinzufügen" kann das 'Web Graph'-Modul mithilfe des Schnellfilters gefunden werden.
+    - Weitere Informationen zum Hinzufügen von Instanzen in der [Dokumentation der Instanzen](https://www.symcon.de/service/dokumentation/konzepte/instanzen/#Instanz_hinzufügen) 
 
 __Konfigurationsseite__:
 
