@@ -10,22 +10,17 @@
 			"add": true,
 			"delete": true,
 			"sort": {
-				"column": "Name",
+				"column": "ObjectID",
 				"direction": "ascending"
 			},
 			"columns": [{
-				"label": "ObjectID",
+				"caption": "Object",
 				"name": "ObjectID",
-				"width": "100px",
+				"width": "auto",
 				"add": 0,
 				"edit": {
 					"type": "SelectObject"
 				}
-			}, {
-				"label": "Name",
-				"name": "Name",
-				"width": "auto",
-				"add": ""
 			}]
 		},
 		{ "type": "Label", "label": "Expert only: Require username/password to load the graphs" },
