@@ -11,7 +11,7 @@
 			"Hour": "Stunde",
 			"Day": "Tag",
 			"Week": "Woche",
-			"Month": "Month",
+			"Month": "Monat",
 			"Year": "Jahr",
 			"Decade": "Dekade",
 			"HighDensity": "Hohe Dichte",
@@ -43,7 +43,8 @@
 			"Oct": "Okt.",
 			"Nov": "Nov.",
 			"Dec": "Dez.",
-			"Symcon Connect is not active!": "Symcon Connect ist nicht aktiv"
+			"Symcon Connect is not active!": "Symcon Connect ist nicht aktiv",
+			"Access List": "Zugriffsliste"
 		}
 	}
 }
