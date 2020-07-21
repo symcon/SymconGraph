@@ -179,7 +179,7 @@ declare(strict_types=1);
 
             $startTime = time();
             if (isset($_GET['startTime']) && $_GET['startTime'] != '') {
-                $startTime = strtotime($_GET['startTime']);
+                $startTime = intval($_GET['startTime']);
             }
 
             /*
