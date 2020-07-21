@@ -1,7 +1,7 @@
 {
 	"elements":
 	[
-		{ "type": "Label", "label": "Please add all allowed object IDs" },
+		{ "type": "Label", "label": "Please add all allowed Charts/Variables" },
 		{
 			"type": "List",
 			"name": "AccessList",
@@ -14,7 +14,7 @@
 				"direction": "ascending"
 			},
 			"columns": [{
-				"caption": "Object",
+				"caption": "Chart/Variable",
 				"name": "ObjectID",
 				"width": "auto",
 				"add": 0,
