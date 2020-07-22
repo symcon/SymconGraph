@@ -1,7 +1,7 @@
 {
 	"elements":
 	[
-		{ "type": "Label", "label": "Please add all allowed object IDs" },
+		{ "type": "Label", "label": "Please add all allowed Charts/Variables" },
 		{
 			"type": "List",
 			"name": "AccessList",
@@ -10,22 +10,17 @@
 			"add": true,
 			"delete": true,
 			"sort": {
-				"column": "Name",
+				"column": "ObjectID",
 				"direction": "ascending"
 			},
 			"columns": [{
-				"label": "ObjectID",
+				"caption": "Chart/Variable",
 				"name": "ObjectID",
-				"width": "100px",
+				"width": "auto",
 				"add": 0,
 				"edit": {
 					"type": "SelectObject"
 				}
-			}, {
-				"label": "Name",
-				"name": "Name",
-				"width": "auto",
-				"add": ""
 			}]
 		},
 		{ "type": "Label", "label": "Expert only: Require username/password to load the graphs" },
@@ -35,7 +30,7 @@
 	"actions":
 	[
 		{ "type": "Select", "name": "ObjectID",	"caption": "ObjectID", "options": [] },
-		{ "type": "ValidationTextBox", "name": "StartTime", "caption": "Date/Time" },
+		{ "type": "SelectDateTime", "name": "StartTime", "caption": "Date/Time" },
 		{ "type": "Select", "name": "TimeSpan",	"caption": "Time span",
 			"options": [{
 				"label": "Hour",
@@ -66,5 +61,5 @@
 		{ "type": "NumberSpinner", "name": "Height", "caption": "Height" },
 		{ "type": "CheckBox", "name": "ShowTitle", "caption": "Show title" },
 		{ "type": "CheckBox", "name": "ShowLegend", "caption": "Show legend" },
-		{ "type": "Button", "label": "Open in Browser", "link": true, "onClick": "echo \"/hook/webgraph/?id=$ObjectID&startTime=$StartTime&timeSpan=$TimeSpan&isHighDensity=$IsHighDensity&isRawDensity=$IsRawDensity&isExtrema=$IsExtrema&isDynamic=$IsDynamic&isContinuous=$IsContinuous&width=$Width&height=$Height&showTitle=$ShowTitle&showLegend=$ShowLegend\";" }	]
+		{ "type": "Button", "label": "Open in Browser", "link": true, "onClick": "$time = json_decode($StartTime, true); $timeStamp = '';if (($time['year'] !== 0) && ($time['month'] !== 0) && ($time['day'] !== 0)) {$timeStamp = mktime($time['hour'], $time['minute'], $time['second'], $time['month'], $time['day'], $time['year']);} echo \"/hook/webgraph/?id=$ObjectID&startTime=$timeStamp&timeSpan=$TimeSpan&isHighDensity=$IsHighDensity&isRawDensity=$IsRawDensity&isExtrema=$IsExtrema&isDynamic=$IsDynamic&isContinuous=$IsContinuous&width=$Width&height=$Height&showTitle=$ShowTitle&showLegend=$ShowLegend\";" }	]
 }

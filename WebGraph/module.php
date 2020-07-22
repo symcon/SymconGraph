@@ -129,10 +129,7 @@ declare(strict_types=1);
             $values = [];
             foreach ($allowed as $item) {
                 $options[] = ['label' => IPS_GetName($item->ObjectID), 'value' => $item->ObjectID];
-                $values[] = ['Name' => IPS_GetName($item->ObjectID)];
             }
-
-            $formdata->elements[1]->values = $values;
             $formdata->actions[0]->options = $options;
 
             return json_encode($formdata);
@@ -182,7 +179,7 @@ declare(strict_types=1);
 
             $startTime = time();
             if (isset($_GET['startTime']) && $_GET['startTime'] != '') {
-                $startTime = strtotime($_GET['startTime']);
+                $startTime = intval($_GET['startTime']);
             }
 
             /*
