@@ -41,6 +41,12 @@ div.ipsChart > svg.line > g.graphs > g.point > g > circle {
     stroke: black;
     stroke-width: 2px }
 
+/* Hide Points for HD/RAW line graphs */
+div.ipsChart > svg > g.graphs > g.point > g.line.hd,
+div.ipsChart > svg > g.graphs > g.point > g.line.raw {
+  opacity: 0;
+}
+
 /* Labels for X/Y axis */
 div.ipsChart > svg > g.axis.x > g.labels > text {
     text-anchor: middle; }
