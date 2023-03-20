@@ -44,7 +44,8 @@
 			"Nov": "Nov.",
 			"Dec": "Dez.",
 			"Symcon Connect is not active!": "Symcon Connect ist nicht aktiv",
-			"Access List": "Zugriffsliste"
+			"Access List": "Zugriffsliste",
+			"Invalid Object #%d": "Ungültiges Objekt #%d"
 		}
 	}
 }
