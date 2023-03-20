@@ -39,6 +39,16 @@ declare(strict_types=1);
             if (IPS_GetKernelRunlevel() == KR_READY) {
                 $this->RegisterHook('/hook/webgraph');
             }
+
+            // Update reference search
+            $refs = $this->GetReferenceList();
+            foreach ($refs as $ref) {
+                $this->UnregisterReference($ref);
+            }
+
+            foreach ($json_decode($this->ReadPropertyString('AccessList')) as $item) {
+                $this->RegisterReference($item->ObjectID);
+            }
         }
 
         private function TranslateChart($chart)
