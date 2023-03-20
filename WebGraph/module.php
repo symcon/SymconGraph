@@ -243,7 +243,7 @@ declare(strict_types=1);
             if ($isContinuous) {
                 switch ($timeSpan) {
                     case 0: //Hour
-                        $startTime = mktime(intval(date('H', $startTime)) - 1, floor(intval(date('i', $startTime)) / 5) * 5 + 5, 0, intval(date('m', $startTime)), intval(date('d', $startTime)), intval(date('Y', $startTime)));
+                        $startTime = mktime(intval(date('H', $startTime)) - 1, intval(floor(intval(date('i', $startTime)) / 5) * 5 + 5), 0, intval(date('m', $startTime)), intval(date('d', $startTime)), intval(date('Y', $startTime)));
                         break;
                     case 1: //Day
                         $startTime = mktime(intval(date('H', $startTime)) + 1, 0, 0, intval(date('m', $startTime)), intval(date('d', $startTime)) - 1, intval(date('Y', $startTime)));
