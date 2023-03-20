@@ -252,7 +252,7 @@ declare(strict_types=1);
                         $startTime = mktime(0, 0, 0, intval(date('m', $startTime)), intval(date('d', $startTime)) - 7 + 1, intval(date('Y', $startTime)));
                         break;
                     case 3: //Month
-                        $startTime = mktime(0, 0, 0, intval(date('m', $startTime)), intval(date('d', $startTime)) - intval(date('t', $startTime)) + 1, intval(date('Y', $startTime)));
+                        $startTime = mktime(0, 0, 0, intval(date('m', $startTime)) - 1, intval(date('d', $startTime)) + 1, intval(date('Y', $startTime)));
                         break;
                     case 4: //Year
                         $startTime = mktime(0, 0, 0, intval(date('m', $startTime)) + 1, 1, intval(date('Y', $startTime)) - 1);
