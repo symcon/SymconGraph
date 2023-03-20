@@ -46,7 +46,7 @@ declare(strict_types=1);
                 $this->UnregisterReference($ref);
             }
 
-            foreach ($json_decode($this->ReadPropertyString('AccessList')) as $item) {
+            foreach (json_decode($this->ReadPropertyString('AccessList')) as $item) {
                 $this->RegisterReference($item->ObjectID);
             }
         }
