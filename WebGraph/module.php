@@ -128,7 +128,12 @@ declare(strict_types=1);
             $options = [];
             $values = [];
             foreach ($allowed as $item) {
-                $options[] = ['label' => IPS_GetName($item->ObjectID), 'value' => $item->ObjectID];
+                if (IPS_ObjectExists($item->ObjectID)) {
+                    $options[] = ['label' => IPS_GetName($item->ObjectID), 'value' => $item->ObjectID];
+                }
+                else {
+                    $options[] = ['label' => sprintf($this->Translate('Invalid Object #%d'), $item->ObjectID), 'value' => $item->ObjectID];
+                }
             }
             $formdata->actions[0]->options = $options;
 
