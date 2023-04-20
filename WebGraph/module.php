@@ -140,8 +140,7 @@ declare(strict_types=1);
             foreach ($allowed as $item) {
                 if (IPS_ObjectExists($item->ObjectID)) {
                     $options[] = ['label' => IPS_GetName($item->ObjectID), 'value' => $item->ObjectID];
-                }
-                else {
+                } else {
                     $options[] = ['label' => sprintf($this->Translate('Invalid Object #%d'), $item->ObjectID), 'value' => $item->ObjectID];
                 }
             }
