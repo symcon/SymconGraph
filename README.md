@@ -6,5 +6,5 @@
 
 Folgende Module beinhaltet das SymconGraph Repository:
 
-- __Web Graph__ ([Dokumentation](WebGraph))  
+- __Web Graph__ ([Dokumentation](https://www.symcon.de/de/service/dokumentation/modulreferenz/web-graph))  
 	Beliebige Graphen können über den Web Hook eigenständig angezeigt werden
