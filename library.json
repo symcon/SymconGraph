@@ -1,12 +1,12 @@
 {
-	"id": "{2AF16CF2-98E0-41BD-A3C0-FE3B1E001D7B}",
-	"author": "Symcon GmbH",
-	"name": "Graph Modules",
-	"url": "https://www.symcon.de/",
-	"compatibility": {
-		"version": "6.0"
-	},
-	"version": "1.5",
-	"build": 0,
-	"date": 0
+    "id": "{2AF16CF2-98E0-41BD-A3C0-FE3B1E001D7B}",
+    "author": "Symcon GmbH",
+    "name": "Graph Modules",
+    "url": "https://www.symcon.de/",
+    "compatibility": {
+        "version": "6.0"
+    },
+    "version": "1.5",
+    "build": 0,
+    "date": 0
 }

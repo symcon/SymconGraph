@@ -1,65 +1,140 @@
 {
-	"elements":
-	[
-		{ "type": "Label", "label": "Please add all allowed Charts/Variables" },
-		{
-			"type": "List",
-			"name": "AccessList",
-			"caption": "Access List",
-			"rowCount": 5,
-			"add": true,
-			"delete": true,
-			"sort": {
-				"column": "ObjectID",
-				"direction": "ascending"
-			},
-			"columns": [{
-				"caption": "Chart/Variable",
-				"name": "ObjectID",
-				"width": "auto",
-				"add": 0,
-				"edit": {
-					"type": "SelectObject"
-				}
-			}]
-		},
-		{ "type": "Label", "label": "Expert only: Require username/password to load the graphs" },
-		{ "name": "Username", "type": "ValidationTextBox", "caption": "Username" },
-		{ "name": "Password", "type": "PasswordTextBox", "caption": "Password" }
-	],
-	"actions":
-	[
-		{ "type": "Select", "name": "ObjectID",	"caption": "ObjectID", "options": [] },
-		{ "type": "SelectDateTime", "name": "StartTime", "caption": "Date/Time" },
-		{ "type": "Select", "name": "TimeSpan",	"caption": "Time span",
-			"options": [{
-				"label": "Hour",
-				"value": 0
-			}, {
-				"label": "Day",
-				"value": 1
-			}, {
-				"label": "Week",
-				"value": 2
-			}, {
-				"label": "Month",
-				"value": 3
-			}, {
-				"label": "Year",
-				"value": 4
-			}, {
-				"label": "Decade",
-				"value": 5
-			}]
-		},
-		{ "type": "CheckBox", "name": "IsHighDensity", "caption": "HighDensity" },
-		{ "type": "CheckBox", "name": "IsRawDensity", "caption": "RawDensity" },
-		{ "type": "CheckBox", "name": "IsExtrema", "caption": "Extrema" },
-		{ "type": "CheckBox", "name": "IsDynamic", "caption": "DynamicScaling" },
-		{ "type": "CheckBox", "name": "IsContinuous", "caption": "Continuous" },
-		{ "type": "NumberSpinner", "name": "Width", "caption": "Width" },
-		{ "type": "NumberSpinner", "name": "Height", "caption": "Height" },
-		{ "type": "CheckBox", "name": "ShowTitle", "caption": "Show title" },
-		{ "type": "CheckBox", "name": "ShowLegend", "caption": "Show legend" },
-		{ "type": "Button", "label": "Open in Browser", "link": true, "onClick": "$time = json_decode($StartTime, true); $timeStamp = '';if (($time['year'] !== 0) && ($time['month'] !== 0) && ($time['day'] !== 0)) {$timeStamp = mktime($time['hour'], $time['minute'], $time['second'], $time['month'], $time['day'], $time['year']);} echo \"/hook/webgraph/?id=$ObjectID&startTime=$timeStamp&timeSpan=$TimeSpan&isHighDensity=$IsHighDensity&isRawDensity=$IsRawDensity&isExtrema=$IsExtrema&isDynamic=$IsDynamic&isContinuous=$IsContinuous&width=$Width&height=$Height&showTitle=$ShowTitle&showLegend=$ShowLegend\";" }	]
+    "elements": [
+        {
+            "type": "Label",
+            "label": "Please add all allowed Charts/Variables"
+        },
+        {
+            "type": "List",
+            "name": "AccessList",
+            "caption": "Access List",
+            "rowCount": 5,
+            "add": true,
+            "delete": true,
+            "sort": {
+                "column": "ObjectID",
+                "direction": "ascending"
+            },
+            "columns": [
+                {
+                    "caption": "Chart/Variable",
+                    "name": "ObjectID",
+                    "width": "auto",
+                    "add": 0,
+                    "edit": {
+                        "type": "SelectObject"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "Label",
+            "label": "Expert only: Require username/password to load the graphs"
+        },
+        {
+            "name": "Username",
+            "type": "ValidationTextBox",
+            "caption": "Username"
+        },
+        {
+            "name": "Password",
+            "type": "PasswordTextBox",
+            "caption": "Password"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Select",
+            "name": "ObjectID",
+            "caption": "ObjectID",
+            "options": []
+        },
+        {
+            "type": "SelectDateTime",
+            "name": "StartTime",
+            "caption": "Date/Time"
+        },
+        {
+            "type": "Select",
+            "name": "TimeSpan",
+            "caption": "Time span",
+            "options": [
+                {
+                    "label": "Hour",
+                    "value": 0
+                },
+                {
+                    "label": "Day",
+                    "value": 1
+                },
+                {
+                    "label": "Week",
+                    "value": 2
+                },
+                {
+                    "label": "Month",
+                    "value": 3
+                },
+                {
+                    "label": "Year",
+                    "value": 4
+                },
+                {
+                    "label": "Decade",
+                    "value": 5
+                }
+            ]
+        },
+        {
+            "type": "CheckBox",
+            "name": "IsHighDensity",
+            "caption": "HighDensity"
+        },
+        {
+            "type": "CheckBox",
+            "name": "IsRawDensity",
+            "caption": "RawDensity"
+        },
+        {
+            "type": "CheckBox",
+            "name": "IsExtrema",
+            "caption": "Extrema"
+        },
+        {
+            "type": "CheckBox",
+            "name": "IsDynamic",
+            "caption": "DynamicScaling"
+        },
+        {
+            "type": "CheckBox",
+            "name": "IsContinuous",
+            "caption": "Continuous"
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "Width",
+            "caption": "Width"
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "Height",
+            "caption": "Height"
+        },
+        {
+            "type": "CheckBox",
+            "name": "ShowTitle",
+            "caption": "Show title"
+        },
+        {
+            "type": "CheckBox",
+            "name": "ShowLegend",
+            "caption": "Show legend"
+        },
+        {
+            "type": "Button",
+            "label": "Open in Browser",
+            "link": true,
+            "onClick": "$time = json_decode($StartTime, true); $timeStamp = '';if (($time['year'] !== 0) && ($time['month'] !== 0) && ($time['day'] !== 0)) {$timeStamp = mktime($time['hour'], $time['minute'], $time['second'], $time['month'], $time['day'], $time['year']);} echo \"/hook/webgraph/?id=$ObjectID&startTime=$timeStamp&timeSpan=$TimeSpan&isHighDensity=$IsHighDensity&isRawDensity=$IsRawDensity&isExtrema=$IsExtrema&isDynamic=$IsDynamic&isContinuous=$IsContinuous&width=$Width&height=$Height&showTitle=$ShowTitle&showLegend=$ShowLegend\";"
+        }
+    ]
 }
