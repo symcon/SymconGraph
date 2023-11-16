@@ -1,15 +1,14 @@
 {
-	"id": "{55569796-1416-477B-9B8D-6374BA5D51CF}",
-	"name": "WebGraph",
-	"type": 0,
-	"vendor": "",
-	"aliases": 
-	[
-		"Web Graph"
-	],
-	"parentRequirements": [],
-	"childRequirements": [],
-	"implemented": [],
-	"prefix": "WGR",
-	"url": "https://github.com/symcon/SymconGraph/tree/master/WebGraph"
+    "id": "{55569796-1416-477B-9B8D-6374BA5D51CF}",
+    "name": "WebGraph",
+    "type": 0,
+    "vendor": "",
+    "aliases": [
+        "Web Graph"
+    ],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "WGR",
+    "url": "https://github.com/symcon/SymconGraph/tree/master/WebGraph"
 }
