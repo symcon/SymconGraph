@@ -45,7 +45,8 @@
             "Dec": "Dez.",
             "Symcon Connect is not active!": "Symcon Connect ist nicht aktiv",
             "Access List": "Zugriffsliste",
-            "Invalid Object #%d": "Ungültiges Objekt #%d"
+            "Invalid Object #%d": "Ungültiges Objekt #%d",
+            "https://www.symcon.de/en/service/documentation/module-reference/web-graph/": "https://www.symcon.de/de/service/dokumentation/modulreferenz/web-graph/"
         }
     }
 }
