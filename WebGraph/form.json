@@ -10,6 +10,7 @@
             "caption": "Access List",
             "rowCount": 5,
             "add": true,
+            "multiAdd": true,
             "delete": true,
             "sort": {
                 "column": "ObjectID",
